@@ -2,6 +2,8 @@
 
 Lightweight pipeline to train a fundus image classifier (cataract, glaucoma, normal, diabetic retinopathy) with optional early stopping on validation accuracy.
 
+![RetinaAI Web Interface](screenshot.png)
+
 ## Data layout
 - Place images under `data/raw/dataset/` with one folder per class: `cataract/`, `glaucoma/`, `normal/`, `diabetic_retinopathy/` (exclude No_DR images).
 - Raw CSVs (if any) live in `data/raw/`; processed train/val splits are written to `data/processed/`.
