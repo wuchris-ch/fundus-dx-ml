@@ -1,0 +1,27 @@
+# macOS noise
+.DS_Store
+
+# Python caches and virtualenvs
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# Large datasets and temporary image folders
+data/
+AMD temp/
+DR images temp/
+
+# Frontend dependencies and build outputs
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.next/
+frontend/.turbo/
+frontend/.eslintcache
+
+# Environment files
+.env
+*.env
