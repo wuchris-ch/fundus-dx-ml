@@ -30,9 +30,9 @@ const HowItWorks = () => {
             transition={{ duration: 0.6 }}
         >
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center border border-teal-500/20">
-                        <Brain className="w-6 h-6 text-teal-400" />
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-800 flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-500/15 to-orange-500/15 flex items-center justify-center border border-rose-500/20">
+                        <Brain className="w-6 h-6 text-rose-500" />
                     </div>
                     <span>
                         <span className="font-display italic gradient-text">How</span>
@@ -40,18 +40,18 @@ const HowItWorks = () => {
                     </span>
                 </h2>
 
-                <div className="bg-[#111920] p-1.5 rounded-xl flex items-center border border-slate-800">
+                <div className="bg-slate-100 p-1.5 rounded-xl flex items-center border border-slate-200">
                     <button
                         onClick={() => setActiveTab('simple')}
                         className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-2 relative ${activeTab === 'simple'
                             ? 'text-white'
-                            : 'text-slate-500 hover:text-slate-300'
+                            : 'text-slate-500 hover:text-slate-700'
                             }`}
                     >
                         {activeTab === 'simple' && (
                             <motion.div 
                                 layoutId="activeTab"
-                                className="absolute inset-0 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-lg shadow-lg shadow-teal-500/25"
+                                className="absolute inset-0 bg-gradient-to-r from-rose-500 to-orange-500 rounded-lg shadow-lg shadow-rose-500/25"
                                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                             />
                         )}
@@ -64,13 +64,13 @@ const HowItWorks = () => {
                         onClick={() => setActiveTab('technical')}
                         className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-2 relative ${activeTab === 'technical'
                             ? 'text-white'
-                            : 'text-slate-500 hover:text-slate-300'
+                            : 'text-slate-500 hover:text-slate-700'
                             }`}
                     >
                         {activeTab === 'technical' && (
                             <motion.div 
                                 layoutId="activeTab"
-                                className="absolute inset-0 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-lg shadow-lg shadow-teal-500/25"
+                                className="absolute inset-0 bg-gradient-to-r from-rose-500 to-orange-500 rounded-lg shadow-lg shadow-rose-500/25"
                                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                             />
                         )}
@@ -84,8 +84,8 @@ const HowItWorks = () => {
 
             <div className="glass-card rounded-3xl p-8 relative overflow-hidden">
                 {/* Decorative background element */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-teal-500/5 to-transparent rounded-bl-full pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-cyan-500/5 to-transparent rounded-tr-full pointer-events-none" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-rose-500/5 to-transparent rounded-bl-full pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-orange-500/5 to-transparent rounded-tr-full pointer-events-none" />
                 
                 <AnimatePresence mode="wait">
                     {activeTab === 'simple' ? (
@@ -104,14 +104,14 @@ const HowItWorks = () => {
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.1 }}
                                 >
-                                    <div className="w-14 h-14 bg-gradient-to-br from-teal-500/10 to-teal-500/5 rounded-xl flex items-center justify-center border border-teal-500/20 mb-4 group-hover:scale-110 transition-transform duration-300">
-                                        <Microscope className="w-7 h-7 text-teal-400" />
+                                    <div className="w-14 h-14 bg-gradient-to-br from-rose-500/10 to-rose-500/5 rounded-xl flex items-center justify-center border border-rose-500/20 mb-4 group-hover:scale-110 transition-transform duration-300">
+                                        <Microscope className="w-7 h-7 text-rose-500" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-white">Like a Trained Specialist</h3>
-                                    <p className="text-slate-400 leading-relaxed">
+                                    <h3 className="text-xl font-bold text-slate-800">Like a Trained Specialist</h3>
+                                    <p className="text-slate-500 leading-relaxed">
                                         Imagine a doctor who has looked at thousands of eye scans. Over time, they learn to spot tiny patterns, like small spots or unusual blood vessels, that indicate a disease.
                                     </p>
-                                    <p className="text-slate-400 leading-relaxed">
+                                    <p className="text-slate-500 leading-relaxed">
                                         Our AI works the same way. We showed it thousands of examples of healthy eyes and eyes with cataracts, glaucoma, or diabetic retinopathy. It "learned" to recognize the unique visual signatures of each condition.
                                     </p>
                                 </motion.div>
@@ -122,14 +122,14 @@ const HowItWorks = () => {
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.2 }}
                                 >
-                                    <div className="w-14 h-14 bg-gradient-to-br from-orange-500/10 to-orange-500/5 rounded-xl flex items-center justify-center border border-orange-500/20 mb-4 group-hover:scale-110 transition-transform duration-300">
-                                        <Zap className="w-7 h-7 text-orange-400" />
+                                    <div className="w-14 h-14 bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl flex items-center justify-center border border-amber-500/20 mb-4 group-hover:scale-110 transition-transform duration-300">
+                                        <Zap className="w-7 h-7 text-amber-500" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-white">Instant Analysis</h3>
-                                    <p className="text-slate-400 leading-relaxed">
+                                    <h3 className="text-xl font-bold text-slate-800">Instant Analysis</h3>
+                                    <p className="text-slate-500 leading-relaxed">
                                         When you upload an image, the AI breaks it down into millions of tiny pixels. It compares these pixels against the patterns it knows.
                                     </p>
-                                    <p className="text-slate-400 leading-relaxed">
+                                    <p className="text-slate-500 leading-relaxed">
                                         In less than a second, it calculates a "confidence score." If it says 98% Glaucoma, it means the image looks 98% similar to the confirmed glaucoma cases it studied during training.
                                     </p>
                                 </motion.div>
@@ -137,7 +137,7 @@ const HowItWorks = () => {
 
                             {/* Visual process flow */}
                             <motion.div 
-                                className="mt-8 pt-8 border-t border-slate-800"
+                                className="mt-8 pt-8 border-t border-slate-200"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.3 }}
@@ -145,14 +145,14 @@ const HowItWorks = () => {
                                 <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
                                     {['Upload Image', 'AI Analysis', 'Pattern Matching', 'Results'].map((step, i) => (
                                         <React.Fragment key={step}>
-                                            <div className="flex items-center gap-2 px-4 py-2 bg-[#151d26] rounded-full border border-slate-700">
-                                                <span className="w-6 h-6 rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 flex items-center justify-center text-xs font-bold text-white">
+                                            <div className="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-full border border-slate-200">
+                                                <span className="w-6 h-6 rounded-full bg-gradient-to-r from-rose-500 to-orange-500 flex items-center justify-center text-xs font-bold text-white">
                                                     {i + 1}
                                                 </span>
-                                                <span className="text-slate-300">{step}</span>
+                                                <span className="text-slate-600">{step}</span>
                                             </div>
                                             {i < 3 && (
-                                                <div className="hidden sm:block w-8 h-px bg-gradient-to-r from-teal-500/50 to-cyan-500/50" />
+                                                <div className="hidden sm:block w-8 h-px bg-gradient-to-r from-rose-500/50 to-orange-500/50" />
                                             )}
                                         </React.Fragment>
                                     ))}
@@ -176,26 +176,26 @@ const HowItWorks = () => {
                                     transition={{ delay: 0.1 }}
                                 >
                                     <div className="group">
-                                        <h3 className="text-base font-bold text-teal-400 mb-3 flex items-center gap-2">
-                                            <div className="w-8 h-8 rounded-lg bg-teal-500/10 flex items-center justify-center border border-teal-500/20">
+                                        <h3 className="text-base font-bold text-rose-500 mb-3 flex items-center gap-2">
+                                            <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center border border-rose-500/20">
                                                 <Layers className="w-4 h-4" />
                                             </div>
                                             Model Architecture
                                         </h3>
-                                        <p className="text-slate-400 text-sm leading-relaxed pl-10">
-                                            We utilize a <span className="text-teal-300 font-semibold">ResNet-18</span> (Residual Neural Network) architecture. This is a Convolutional Neural Network (CNN) that is 18 layers deep. It uses "skip connections" to allow gradients to flow more easily during training, enabling the model to learn complex features without the vanishing gradient problem.
+                                        <p className="text-slate-500 text-sm leading-relaxed pl-10">
+                                            We utilize a <span className="text-rose-600 font-semibold">ResNet-18</span> (Residual Neural Network) architecture. This is a Convolutional Neural Network (CNN) that is 18 layers deep. It uses "skip connections" to allow gradients to flow more easily during training, enabling the model to learn complex features without the vanishing gradient problem.
                                         </p>
                                     </div>
 
                                     <div className="group">
-                                        <h3 className="text-base font-bold text-cyan-400 mb-3 flex items-center gap-2">
-                                            <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center border border-cyan-500/20">
+                                        <h3 className="text-base font-bold text-blue-500 mb-3 flex items-center gap-2">
+                                            <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
                                                 <Database className="w-4 h-4" />
                                             </div>
                                             Transfer Learning
                                         </h3>
-                                        <p className="text-slate-400 text-sm leading-relaxed pl-10">
-                                            Instead of training from scratch, we use <span className="text-cyan-300 font-semibold">Transfer Learning</span>. The model was pre-trained on ImageNet (1.2 million images) to learn basic visual features (edges, textures). We then replaced the final fully connected layer (<code className="text-orange-400 bg-orange-500/10 px-1.5 py-0.5 rounded text-xs">fc</code>) to output our 4 specific classes: Normal, Cataract, Glaucoma, and Diabetic Retinopathy.
+                                        <p className="text-slate-500 text-sm leading-relaxed pl-10">
+                                            Instead of training from scratch, we use <span className="text-blue-600 font-semibold">Transfer Learning</span>. The model was pre-trained on ImageNet (1.2 million images) to learn basic visual features (edges, textures). We then replaced the final fully connected layer (<code className="text-amber-600 bg-amber-500/10 px-1.5 py-0.5 rounded text-xs">fc</code>) to output our 4 specific classes: Normal, Cataract, Glaucoma, and Diabetic Retinopathy.
                                         </p>
                                     </div>
                                 </motion.div>
@@ -207,45 +207,45 @@ const HowItWorks = () => {
                                     transition={{ delay: 0.2 }}
                                 >
                                     <div className="group">
-                                        <h3 className="text-base font-bold text-teal-400 mb-3 flex items-center gap-2">
-                                            <div className="w-8 h-8 rounded-lg bg-teal-500/10 flex items-center justify-center border border-teal-500/20">
+                                        <h3 className="text-base font-bold text-rose-500 mb-3 flex items-center gap-2">
+                                            <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center border border-rose-500/20">
                                                 <GitBranch className="w-4 h-4" />
                                             </div>
                                             Training Pipeline
                                         </h3>
-                                        <ul className="space-y-2.5 text-sm text-slate-400 pl-10">
+                                        <ul className="space-y-2.5 text-sm text-slate-500 pl-10">
                                             <li className="flex items-start gap-2">
-                                                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400 mt-2 shrink-0" />
-                                                <span><span className="text-slate-300 font-medium">Optimizer:</span> SGD with Momentum (0.9) and learning rate 0.001</span>
+                                                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-rose-500 to-orange-500 mt-2 shrink-0" />
+                                                <span><span className="text-slate-700 font-medium">Optimizer:</span> SGD with Momentum (0.9) and learning rate 0.001</span>
                                             </li>
                                             <li className="flex items-start gap-2">
-                                                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400 mt-2 shrink-0" />
-                                                <span><span className="text-slate-300 font-medium">Loss Function:</span> CrossEntropyLoss for multi-class classification</span>
+                                                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-rose-500 to-orange-500 mt-2 shrink-0" />
+                                                <span><span className="text-slate-700 font-medium">Loss Function:</span> CrossEntropyLoss for multi-class classification</span>
                                             </li>
                                             <li className="flex items-start gap-2">
-                                                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400 mt-2 shrink-0" />
-                                                <span><span className="text-slate-300 font-medium">Augmentation:</span> Random horizontal flips and rotations (±10°)</span>
+                                                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-rose-500 to-orange-500 mt-2 shrink-0" />
+                                                <span><span className="text-slate-700 font-medium">Augmentation:</span> Random horizontal flips and rotations (±10°)</span>
                                             </li>
                                         </ul>
                                     </div>
 
                                     <div className="group">
-                                        <h3 className="text-base font-bold text-orange-400 mb-3 flex items-center gap-2">
-                                            <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center border border-orange-500/20">
+                                        <h3 className="text-base font-bold text-amber-500 mb-3 flex items-center gap-2">
+                                            <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center border border-amber-500/20">
                                                 <Cpu className="w-4 h-4" />
                                             </div>
                                             Inference Process
                                         </h3>
-                                        <div className="bg-[#0a0f14] p-4 rounded-xl font-mono text-xs text-slate-400 border border-slate-800 ml-10 relative overflow-hidden">
-                                            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-teal-500 via-cyan-500 to-orange-500" />
+                                        <div className="bg-slate-50 p-4 rounded-xl font-mono text-xs text-slate-500 border border-slate-200 ml-10 relative overflow-hidden">
+                                            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-rose-500 via-blue-500 to-amber-500" />
                                             <div className="space-y-1.5 pl-3">
-                                                <div><span className="text-slate-500">// Input</span></div>
-                                                <div>Image <span className="text-slate-600">(H, W, C)</span></div>
-                                                <div className="text-teal-500">↓ <span className="text-slate-400">Resize (224×224) & Normalize</span></div>
-                                                <div className="text-cyan-500">↓ <span className="text-slate-400">ResNet-18 Forward Pass</span></div>
-                                                <div className="text-cyan-500">↓ <span className="text-slate-400">Logits <span className="text-slate-600">(1×4 Vector)</span></span></div>
-                                                <div className="text-orange-500">↓ <span className="text-slate-400">Softmax Function</span></div>
-                                                <div><span className="text-teal-400">→</span> <span className="text-teal-300 font-semibold">Probability Distribution</span></div>
+                                                <div><span className="text-slate-400">// Input</span></div>
+                                                <div>Image <span className="text-slate-400">(H, W, C)</span></div>
+                                                <div className="text-rose-500">↓ <span className="text-slate-500">Resize (224×224) & Normalize</span></div>
+                                                <div className="text-blue-500">↓ <span className="text-slate-500">ResNet-18 Forward Pass</span></div>
+                                                <div className="text-blue-500">↓ <span className="text-slate-500">Logits <span className="text-slate-400">(1×4 Vector)</span></span></div>
+                                                <div className="text-amber-500">↓ <span className="text-slate-500">Softmax Function</span></div>
+                                                <div><span className="text-rose-500">→</span> <span className="text-rose-600 font-semibold">Probability Distribution</span></div>
                                             </div>
                                         </div>
                                     </div>
