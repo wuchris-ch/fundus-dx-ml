@@ -7,14 +7,14 @@ const HowItWorks = () => {
 
     const tabVariants = {
         hidden: { opacity: 0, y: 20, scale: 0.95 },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             y: 0,
             scale: 1,
             transition: { duration: 0.4, ease: "easeOut" }
         },
-        exit: { 
-            opacity: 0, 
+        exit: {
+            opacity: 0,
             y: -20,
             scale: 0.95,
             transition: { duration: 0.3 }
@@ -22,7 +22,7 @@ const HowItWorks = () => {
     };
 
     return (
-        <motion.section 
+        <motion.section
             className="w-full max-w-5xl mt-24 mb-12"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ const HowItWorks = () => {
                             }`}
                     >
                         {activeTab === 'simple' && (
-                            <motion.div 
+                            <motion.div
                                 layoutId="activeTab"
                                 className="absolute inset-0 bg-gradient-to-r from-rose-500 to-orange-500 rounded-lg shadow-lg shadow-rose-500/25"
                                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -68,7 +68,7 @@ const HowItWorks = () => {
                             }`}
                     >
                         {activeTab === 'technical' && (
-                            <motion.div 
+                            <motion.div
                                 layoutId="activeTab"
                                 className="absolute inset-0 bg-gradient-to-r from-rose-500 to-orange-500 rounded-lg shadow-lg shadow-rose-500/25"
                                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -86,7 +86,7 @@ const HowItWorks = () => {
                 {/* Decorative background element */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-rose-500/5 to-transparent rounded-bl-full pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-orange-500/5 to-transparent rounded-tr-full pointer-events-none" />
-                
+
                 <AnimatePresence mode="wait">
                     {activeTab === 'simple' ? (
                         <motion.div
@@ -98,7 +98,7 @@ const HowItWorks = () => {
                             className="space-y-8 relative"
                         >
                             <div className="grid md:grid-cols-2 gap-8">
-                                <motion.div 
+                                <motion.div
                                     className="space-y-4 group"
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
@@ -107,16 +107,16 @@ const HowItWorks = () => {
                                     <div className="w-14 h-14 bg-gradient-to-br from-rose-500/10 to-rose-500/5 rounded-xl flex items-center justify-center border border-rose-500/20 mb-4 group-hover:scale-110 transition-transform duration-300">
                                         <Microscope className="w-7 h-7 text-rose-500" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-slate-800">Like a Trained Specialist</h3>
+                                    <h3 className="text-xl font-bold text-slate-800">Pattern Recognition</h3>
                                     <p className="text-slate-500 leading-relaxed">
-                                        Imagine a doctor who has looked at thousands of eye scans. Over time, they learn to spot tiny patterns, like small spots or unusual blood vessels, that indicate a disease.
+                                        Imagine an expert analyzing thousands of eye scans. Over time, patterns emerge, such as tiny spots or specific vessel changes, that correlate with certain conditions.
                                     </p>
                                     <p className="text-slate-500 leading-relaxed">
-                                        Our AI works the same way. We showed it thousands of examples of healthy eyes and eyes with cataracts, glaucoma, or diabetic retinopathy. It "learned" to recognize the unique visual signatures of each condition.
+                                        Our model operates on a similar principle. By processing thousands of examples of healthy and affected eyes (including cataracts, glaucoma, and diabetic retinopathy), it has been trained to identify visual features associated with each condition.
                                     </p>
                                 </motion.div>
 
-                                <motion.div 
+                                <motion.div
                                     className="space-y-4 group"
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
@@ -136,7 +136,7 @@ const HowItWorks = () => {
                             </div>
 
                             {/* Visual process flow */}
-                            <motion.div 
+                            <motion.div
                                 className="mt-8 pt-8 border-t border-slate-200"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -169,7 +169,7 @@ const HowItWorks = () => {
                             className="space-y-8 relative"
                         >
                             <div className="grid md:grid-cols-2 gap-8">
-                                <motion.div 
+                                <motion.div
                                     className="space-y-6"
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
@@ -200,7 +200,7 @@ const HowItWorks = () => {
                                     </div>
                                 </motion.div>
 
-                                <motion.div 
+                                <motion.div
                                     className="space-y-6"
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
