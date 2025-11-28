@@ -67,7 +67,8 @@ function App() {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('http://localhost:8000/predict', formData, {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+      const response = await axios.post(`${apiUrl}/predict`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -128,26 +129,26 @@ function App() {
   return (
     <div className="min-h-screen relative">
       <BackgroundElements />
-      
+
       <div className="relative z-10 flex flex-col items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="w-full max-w-5xl"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Header */}
-          <motion.header 
+          <motion.header
             className="text-center mb-20"
             variants={itemVariants}
           >
             <div className="flex flex-col items-center justify-center">
               {/* Animated Logo */}
-              <motion.div 
+              <motion.div
                 className="relative mb-8"
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ 
+                transition={{
                   type: "spring",
                   stiffness: 200,
                   damping: 20,
@@ -158,24 +159,24 @@ function App() {
                   {/* Outer glow rings */}
                   <div className="absolute inset-0 w-24 h-24 rounded-full bg-gradient-to-r from-rose-400/20 to-orange-400/20 blur-xl animate-pulse" />
                   <div className="absolute inset-2 w-20 h-20 rounded-full bg-gradient-to-r from-rose-400/10 to-orange-400/10 blur-lg" />
-                  
+
                   {/* Main icon container */}
                   <div className="relative w-24 h-24 rounded-2xl bg-white flex items-center justify-center border border-slate-200 shadow-xl shadow-rose-500/10">
                     <Eye className="w-12 h-12 text-rose-500" strokeWidth={1.5} />
-                    
+
                     {/* Scanning animation */}
-                    <motion.div 
+                    <motion.div
                       className="absolute inset-0 rounded-2xl overflow-hidden"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.5 }}
                     >
-                      <motion.div 
+                      <motion.div
                         className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-rose-500 to-transparent"
-                        animate={{ 
+                        animate={{
                           top: ["0%", "100%", "0%"],
                         }}
-                        transition={{ 
+                        transition={{
                           duration: 3,
                           repeat: Infinity,
                           ease: "linear"
@@ -203,7 +204,7 @@ function App() {
                 </div>
               </motion.div>
 
-              <motion.p 
+              <motion.p
                 className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mt-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -278,7 +279,7 @@ function App() {
                             className="relative max-h-[350px] w-auto object-contain rounded-lg shadow-2xl"
                           />
                         </div>
-                        <div 
+                        <div
                           className="absolute inset-0 bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm cursor-pointer"
                           onClick={() => fileInputRef.current?.click()}
                         >
@@ -295,7 +296,7 @@ function App() {
                         exit={{ opacity: 0 }}
                         className="space-y-6"
                       >
-                        <motion.div 
+                        <motion.div
                           className="w-24 h-24 mx-auto bg-slate-50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-slate-200 group-hover:border-rose-400/50 shadow-lg relative overflow-hidden"
                           whileHover={{ rotate: [0, -5, 5, 0] }}
                           transition={{ duration: 0.5 }}
@@ -369,7 +370,7 @@ function App() {
                   >
                     <div className="p-8 h-full">
                       <div className="flex items-center gap-4 mb-8 pb-8 border-b border-slate-200">
-                        <motion.div 
+                        <motion.div
                           className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center border border-emerald-500/30"
                           initial={{ scale: 0, rotate: -180 }}
                           animate={{ scale: 1, rotate: 0 }}
@@ -385,7 +386,7 @@ function App() {
 
                       <div className="space-y-8">
                         {/* Primary Diagnosis */}
-                        <motion.div 
+                        <motion.div
                           className="bg-slate-50 rounded-2xl p-6 border border-slate-200 relative overflow-hidden"
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
@@ -393,7 +394,7 @@ function App() {
                         >
                           {/* Decorative gradient */}
                           <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-rose-500/10 to-transparent rounded-bl-full" />
-                          
+
                           <p className="text-slate-500 text-xs uppercase tracking-widest font-bold mb-3">Primary Diagnosis</p>
                           <p className="text-4xl md:text-5xl font-bold capitalize font-display mb-2 gradient-text">
                             {prediction.prediction.replace('_', ' ')}
@@ -416,8 +417,8 @@ function App() {
                             {Object.entries(prediction.probabilities)
                               .sort(([, a], [, b]) => b - a)
                               .map(([className, prob], index) => (
-                                <motion.div 
-                                  key={className} 
+                                <motion.div
+                                  key={className}
                                   className="group"
                                   initial={{ opacity: 0, x: -20 }}
                                   animate={{ opacity: 1, x: 0 }}
@@ -451,7 +452,7 @@ function App() {
                     </div>
                   </motion.div>
                 ) : (
-                  <motion.div 
+                  <motion.div
                     key="empty"
                     className="h-full flex flex-col items-center justify-center text-slate-500 p-12 border border-slate-200 rounded-3xl bg-white/50 backdrop-blur-sm relative overflow-hidden"
                     initial={{ opacity: 0 }}
@@ -464,10 +465,10 @@ function App() {
                       <div className="absolute w-48 h-48 rounded-full border border-orange-400" />
                       <div className="absolute w-32 h-32 rounded-full border border-rose-400" />
                     </div>
-                    
-                    <motion.div 
+
+                    <motion.div
                       className="w-20 h-20 rounded-2xl bg-slate-50 flex items-center justify-center mb-6 border border-slate-200 relative z-10"
-                      animate={{ 
+                      animate={{
                         boxShadow: [
                           "0 0 0 0 rgba(249, 112, 104, 0)",
                           "0 0 0 20px rgba(249, 112, 104, 0.08)",
