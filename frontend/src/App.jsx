@@ -195,7 +195,7 @@ function App() {
               >
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-2">
                   <span className="font-display italic gradient-text">Retina</span>
-                  <span className="font-display italic text-slate-700">AI</span>
+                  <span className="text-slate-700 font-light">AI</span>
                 </h1>
                 <div className="flex items-center justify-center gap-2 text-rose-500/70 text-sm font-medium tracking-widest uppercase mt-3">
                   <Sparkles className="w-4 h-4" />
