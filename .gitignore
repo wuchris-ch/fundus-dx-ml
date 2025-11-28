@@ -25,3 +25,6 @@ frontend/.eslintcache
 # Environment files
 .env
 *.env
+
+# Investigation scripts
+investigation/
